@@ -28,66 +28,96 @@ void blue_grid1()
   leftTurnEncoder(80, 255);
   delay(500);
 
-  // move forward 3 strips and pick box
-  linefollowEncoder(60);
-  delay(500);
-  linefollowUntil(1);
-  delay(500);
-  linefollowEncoder(60);
-  delay(500);
-  linefollowUntil(1);
-  delay(500);
-  linefollowEncoder(60);
-  delay(500);
-  linefollowUntil(2);
+  backLinefollowEncoder(70);
   delay(500);
 
-  //HERE ALL BOXES ARE ALREADY PICKED
-  leftTurnEncoder(80, 255);
+  Servo3.write(0);
   delay(500);
 
-  // Drop Red Box
-  linefollowUntil(2);
+  // // move forward 3 strips and pick box
+  linefollowEncoder(162);
   delay(500);
-  linefollowEncoder(140);
-  delay(200);
-  
-  // After dropping the red box, move back 4 strips and drop the blue box
-  backLinefollowUntil(5);
+
+  Servo3Move(0,70);
   delay(500);
+
+  linefollowFiveUntil(2);
+  delay(500);
+
+  right90(80);
+  delay(500);
+
+  backLinefollowEncoder(70);
+  delay(500);
+
+  mainServoMove(0,65);
+  delay(500);
+
+
+
+  Servo2.write(0);
+  delay(500);
+
+  linefollowEncoder(162);
+  delay(500);
+
+  Servo2Move(0,70);
+  delay(500);
+
+  backLinefollowFiveUntil(1);
+  delay(500);
+
+  leftTurnEncoder(80, 250);
+  delay(500);
+
+  //p[ick 3rd box]
   backLinefollowEncoder(100);
   delay(500);
 
-  // Backward to pick strip
-  linefollowEncoder(100);
-  delay(500); 
-  leftTurnEncoder(80, 255);
+  mainServoMove(65,130);
   delay(500);
 
-  // After picking the strip, move forward 5 strips to drop the 3 box
-  linefollowUntil(5); 
+  Servo1.write(0);
   delay(500);
-  leftTurnEncoder(80, 255);
-  delay(500);
-  linefollowEncoder(110);
-  delay(500);
-  backLinefollowEncoder(110);
 
-  // After droping last fruit 
-  backLinefollowUntil(2);
+  linefollowEncoder(162);
   delay(500);
- 
+
+  Servo1Move(0,70);
+  delay(500);
+
+  linefollowFiveUntil(2);
+  delay(500);
+
+  leftTurnEncoder(80, 250);
+  delay(500);
+
   
 
-  // Go to the Parking
-  right90(160);
-  delay(500);
-  linefollowEncoder(500);
-
- 
   
+
+  Servo1Move(70,15);
+  delay(500);
+
+  linefollowEncoder(270);
+  delay(500);
+
+  
+
+  Servo1Move(15,0);
+  delay(500);
+
+  backLinefollowFiveUntil(5);
+  delay(500);
+
+
+
+
+
+
+
+
+
+
+
 }
-
-
-
-  
